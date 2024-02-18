@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+<button onclick = "setScrambleMode()">set scramble</button>
+<div id = "color-pallette">
+<div class = "color-s" id = "blue-s" style = "background-color:blue;" onclick = "colorSelector('blue')"></div>
+<div class = "color-s" id = "green-s" style = "background-color:green;" onclick = "colorSelector('green')"></div>
+<div class = "color-s" id = "white-s" style = "background-color:white;" onclick = "colorSelector('white')"></div>
+<div class = "color-s" id = "yellow-s" style = "background-color:yellow;" onclick = "colorSelector('yellow')"></div>
+<div class = "color-s" id = "red-s" style = "background-color:red;" onclick = "colorSelector('red')"></div>
+<div class = "color-s" id = "orange-s" style = "background-color:orange;" onclick = "colorSelector('orange')"></div> <br/>
+<button onclick = "setScrambleMode()">exit</button>
+<button onclick = "setScramble()">solve</button>
+</div>
+<div id = cube>
+<div class = side>
+<div class = face id = blue>
+<div class = corner-piece id="-1,-1,-2" onclick = "colorPrinter('-1,-1,-2')"></div> 
+<div class = edge-piece id="0,-1,-2" onclick = "colorPrinter('0,-1,-2')"></div>
+<div class = corner-piece id = "1,-1,-2" onclick = "colorPrinter('1,-1,-2')"></div>
+<div class = edge-piece id="-1,0,-2"  onclick = "colorPrinter('-1,0,-2')"></div>
+<div class = center-piece id = "0,0,-1" style = "background-color:blue;"></div>
+<div class = edge-piece id="1,0,-2" onclick = "colorPrinter('1,0,-2')"></div>
+<div class = corner-piece id = "-1,1,-2" onclick = "colorPrinter('-1,1,-2')"></div>
+<div class = edge-piece id="0,1,-2" onclick = "colorPrinter('0,1,-2')"></div>
+<div class = corner-piece id = "1,1,-2"  onclick = "colorPrinter('1,1,-2')"></div>
+</div> <br/>
+</div>
+
+<div class = side>
+<div class = face id = orange>
+<div class = corner-piece id="-2,-1,-1"  onclick = "colorPrinter('-2,-1,-1')"></div>
+<div class = edge-piece id="-2,0,-1" onclick = "colorPrinter('-2,0,-1')"></div>
+<div class = corner-piece id = "-2,1,-1"  onclick = "colorPrinter('-2,1,-1')"></div>
+<div class = edge-piece id="-2,-1,0"  onclick = "colorPrinter('-2,-1,0')"></div>
+<div class = center-piece id = "-2,0,0" style = "background-color:orange;"></div>
+<div class = edge-piece id="-2,1,0"  onclick = "colorPrinter('-2,1,0')"></div>
+<div class = corner-piece id = "-2,-1,1"  onclick = "colorPrinter('-2,-1,1')"></div>
+<div class = edge-piece id="-2,0,1" onclick = "colorPrinter('-2,0,1')"></div>
+<div class = corner-piece id = "-2,1,1"  onclick = "colorPrinter('-2,1,1')"></div>
+</div>
+
+<div class = face id = white>
+<div class = corner-piece id="-1,2,-1"  onclick = "colorPrinter('-1,2,-1')"></div>
+<div class = edge-piece id="0,2,-1"  onclick = "colorPrinter('0,2,-1')"></div>
+<div class = corner-piece id = "1,2,-1"  onclick = "colorPrinter('1,2,-1')"></div>
+<div class = edge-piece id="-1,2,0"  onclick = "colorPrinter('-1,2,0')"></div>
+<div class = center-piece id = "0,1,0" style = "background-color:white;"></div>
+<div class = edge-piece id="1,2,0"  onclick = "colorPrinter('1,2,0')"></div>
+<div class = corner-piece id = "-1,2,1"  onclick = "colorPrinter('-1,2,1')"></div>
+<div class = edge-piece id="0,2,1"  onclick = "colorPrinter('0,2,1')"></div>
+<div class = corner-piece id = "1,2,1"  onclick = "colorPrinter('1,2,1')"></div>
+</div>
+
+<div class = face id = red>
+<div class = corner-piece id="2,1,-1"  onclick = "colorPrinter('2,1,-1')"></div>
+<div class = edge-piece id="2,0,-1"  onclick = "colorPrinter('2,0,-1')"></div>
+<div class = corner-piece id = "2,-1,-1"  onclick = "colorPrinter('2,-1,-1')"></div>
+<div class = edge-piece id="2,1,0"  onclick = "colorPrinter('2,1,0')"></div>
+<div class = center-piece id = "2,0,0" style = "background-color:red;"></div>
+<div class = edge-piece id="2,-1,0" onclick = "colorPrinter('2,-1,0')"></div>
+<div class = corner-piece id = "2,1,1"  onclick = "colorPrinter('2,1,1')"></div>
+<div class = edge-piece id="2,0,1"  onclick = "colorPrinter('2,0,1')"></div>
+<div class = corner-piece id = "2,-1,1"  onclick = "colorPrinter('2,-1,1')"></div>
+</div> <br/>
+</div>
+
+<div class = side>
+<div class = face id = green>
+<div class = corner-piece id="-1,1,2" onclick = "colorPrinter('-1,1,2')"></div>
+<div class = edge-piece id="0,1,2" onclick = "colorPrinter('0,1,2')"></div>
+<div class = corner-piece id = "1,1,2" onclick = "colorPrinter('1,1,2')"></div>
+<div class = edge-piece id="-1,0,2" onclick = "colorPrinter('-1,0,2')"></div>
+<div class = center-piece id = "0,0,2" style = "background-color:green;"></div>
+<div class = edge-piece id="1,0,2" onclick = "colorPrinter('1,0,2')"></div>
+<div class = corner-piece id = "-1,-1,2"  onclick = "colorPrinter('-1,-1,2')"></div>
+<div class = edge-piece id="0,-1,2" onclick = "colorPrinter('0,-1,2')"></div>
+<div class = corner-piece id = "1,-1,2" onclick = "colorPrinter('1,-1,2')"></div>
+</div> <br/>
+</div>
+
+<div class = side>
+<div class = face id = yellow>
+<div class = corner-piece id="-1,-2,1" onclick = "colorPrinter('-1,-2,1')"></div>
+<div class = edge-piece id="0,-2,1" onclick = "colorPrinter('0,-2,1')"></div>
+<div class = corner-piece id = "1,-2,1" onclick = "colorPrinter('1,-2,1')"></div>
+<div class = edge-piece id="-1,-2,0" onclick = "colorPrinter('-1,-2,0')"></div>
+<div class = center-piece id = "0,-2,0" style = "background-color:yellow;"></div>
+<div class = edge-piece id="1,-2,0" onclick = "colorPrinter('1,-2,0')"></div>
+<div class = corner-piece id = "-1,-2,-1" onclick = "colorPrinter('-1,-2,-1')"></div>
+<div class = edge-piece id="0,-2,-1" onclick = "colorPrinter('0,-2,-1')"></div>
+<div class = corner-piece id = "1,-2,-1" onclick = "colorPrinter('1,-2,-1')"></div>
+</div>
+</div>
+</div>
+</div>
+<div id = turns>
+<button class = "turner" onclick = "alg('R')">R</button>
+<button class = "turner" onclick = "alg('R\'')">R'</button> <br/>
+
+<button class = "turner" onclick = "alg('U')">U</button>
+<button class = "turner" onclick = "alg('U\'')">U'</button> <br/>
+
+<button class = "turner" onclick = "alg('F')">F</button>
+<button class = "turner" onclick = "alg('F\'')">F'</button> <br/>
+
+<button class = "turner" onclick = "alg('B')">B</button>
+<button class = "turner" onclick = "alg('B\'')">B'</button> <br/>
+
+<button class = "turner" onclick = "alg('D')">D</button>
+<button class = "turner" onclick = "alg('D\'')">D'</button> <br/>
+
+<button class = "turner" onclick = "alg('L')">L</button>
+<button class = "turner" onclick = "alg('L\'')">L'</button> <br/>
+</div>
+<br/>
+
+
+<style>
+#green{
+	margin-left:206px;
+}
+#blue{
+	margin-left:206px;
+}
+#yellow{
+	margin-left:206px;
+}
+
+.side {
+	width:800px;
+	height:200px;
+	
+	float:left;
+}
+.face {
+	background-color:black;
+	width:200px;
+	height:200px;
+	margin:0px;
+	float:left;
+	border-style:solid;
+	border-color:white;
+	
+}
+.corner-piece {
+	width:35px;
+	height:35px;
+	margin:10px;
+	border-style:solid;
+	border-color:white;
+	border-width:5px; 
+	/*background-color:green;*/
+	float:left;
+}
+.edge-piece {
+	width:35px;
+	height:35px;
+	margin:10px;
+	border-style:solid;
+	border-color:white;
+	border-width:5px; 
+	/*background-color:green;*/
+	float:left;
+}
+
+.center-piece {
+	width:35px;
+	height:35px;
+	margin:10px;
+	border-style:solid;
+	border-color:white;
+	border-width:5px; 
+	/*background-color:green;*/
+	float:left;
+}
+.vertical_spacer {
+	float:right;
+	width:150px;
+}
+#color-pallette {
+	width:500px;
+	display:none;
+}
+.color-s {
+	width:50px;
+	height:50px;
+	border-style:solid;
+	border-color:black;
+	border-width:5px; 
+	margin:10px;
+	display:inline-block;
+}
+</style>
+<script>
+var piece1 = [-1,1,1,-1,1,1,"white","green","orange","y", "z", "x"]
+var piece2 = [-1,1,-1,-1,1,-1,"white","orange","blue","y","x","z" ]
+var piece3 = [1,1,-1,1,1,-1,"white","blue","red","y", "z", "x"]
+var piece4 = [1,1,1,1,1,1,"white","red","green","y","x","z" ]
+var piece5 = [1,-1,1,1,-1,1,"yellow","green","red","y", "z", "x"]
+var piece6 = [-1,-1,1,-1,-1,1,"yellow","orange","green","y", "x", "z"]
+var piece7 = [-1,-1,-1,-1,-1,-1,"yellow","blue","orange","y", "z", "x"]
+var piece8 = [1,-1,-1,1,-1,-1,"yellow","red","blue","y", "x", "z"]
+var cornersStart = [piece1, piece2, piece3, piece4, piece5, piece6, piece7, piece8] 
+
+
+var edge1 = [0,1,-1,0,1,-1,"white","blue","y","z"];
+var edge2 = [-1,1,0,-1,1,0,"white","orange","y","x"];
+var edge3 = [1,1,0,1,1,0,"white","red","y","x"];
+var edge4 = [0,1,1,0,1,1,"white","green","y","z"];
+var edge5 = [1,0,1,1,0,1,"green","red","z","x"]
+var edge6 = [-1,0,1,-1,0,1,"green","orange","z","x"]
+var edge7 = [-1,0,-1,-1,0,-1,"blue","orange","z","x"]
+var edge8 = [1,0,-1,1,0,-1,"blue","red","z","x"]
+var edge9 = [0,-1,-1,0,-1,-1,"yellow","blue","y","z"];
+var edge10 = [-1,-1,0,-1,-1,0,"yellow","orange","y","x"];
+var edge11 = [1,-1,0,1,-1,0,"yellow","red","y","x"];
+var edge12 = [0,-1,1,0,-1,1,"yellow","green","y","z"];
+var edgesStart = [edge1,edge2,edge3,edge4,edge5,edge6,edge7,edge8,edge9,edge10,edge11,edge12]
+
+class corner {
+	constructor(x, y, z, solvedX, solvedY, solvedZ, first, second, third, oOne, oTwo, oThree) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.solvedX = solvedX;
+		this.solvedY = solvedY;
+		this.solvedZ = solvedZ;
+		this.first = first;
+		this.second = second;
+		this.third = third;
+		this.oOne = oOne;
+		this.oTwo = oTwo;
+		this.oThree = oThree;
+	}
+	
+	//change below for corners:
+	isSolved() {
+		if (this.x === this.solvedX && this.y === this.solvedY && this.z === this.solvedZ) { //correct permutation
+			if( ( (this.first === "white" || this.first === "yellow") && this.oOne === "y") || ( (this.first === "green" || this.first === "blue") && this.oOne === "z") ) { //correct orientation
+				return true;
+			}
+		}
+		return false;
+	}
+	isOnTop() {
+		if (this.y === -1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+class edge {
+	constructor(x, y, z, solvedX, solvedY, solvedZ, first, second, oOne, oTwo) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.solvedX = solvedX;
+		this.solvedY = solvedY;
+		this.solvedZ = solvedZ;
+		this.first = first;
+		this.second = second;
+		this.oOne = oOne;
+		this.oTwo = oTwo;
+	}
+	isSolved() {
+		if (this.x === this.solvedX && this.y === this.solvedY && this.z === this.solvedZ) { //correct permutation
+			if( ( (this.first === "white" || this.first === "yellow") && this.oOne === "y") || ( (this.first === "green" || this.first === "blue") && this.oOne === "z") ) {
+				return true;
+			}
+		}
+		return false;
+	}
+	isOnTop() {
+		if (this.y === -1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+class cube {
+	edges = [];
+	corners = [];
+	edgeHash = {};
+	cornerHash = {};
+	addEdges(e) { //takes list of edge perameters
+		for (var i = 0; i < e.length; i++) {
+			this.edges.push(new edge(e[i][0], e[i][1], e[i][2], e[i][3], e[i][4], e[i][5], e[i][6], e[i][7], e[i][8], e[i][9]))	
+			this.edgeHash[e[i][6] + e[i][7]] = i;
+			console.log("hash name: " + e[i][6] + e[i][7])
+		}
+	}
+	addCorners(c) {//takes list of corner perameters
+		for (var i = 0; i < c.length; i++) {
+			this.corners.push(new corner(c[i][0], c[i][1], c[i][2], c[i][3], c[i][4], c[i][5], c[i][6], c[i][7], c[i][8], c[i][9], c[i][10], c[i][11]))
+			this.cornerHash[c[i][6] + c[i][7] + c[i][8]] = i;
+			console.log("corners")
+		}
+	}
+	constructor(ed, co) {
+		this.edgeHash = {}
+		this.cornerHash = {}
+		this.addEdges(ed);
+		this.addCorners(co);
+		
+	}
+	isCrossSolved() {
+		var start = 0;
+		if (this.edges[this.edgeHash["whiteblue"]].isSolved())
+			start++
+		if (this.edges[this.edgeHash["whiteorange"]].isSolved())
+			start++
+		if (this.edges[this.edgeHash["whitered"]].isSolved())
+			start++
+		if (this.edges[this.edgeHash["whitegreen"]].isSolved())
+			start++
+		return start;
+	}
+	//getPair//return array with both pieces
+	getPair(n) {
+		if (n === 1) {
+			return [this.corners[this.cornerHash["whitegreenorange"]], this.edges[this.edgeHash["greenorange"]]]
+		}
+		if (n === 2) {
+			return [this.corners[this.cornerHash["whiteredgreen"]], this.edges[this.edgeHash["greenred"]]]
+		}
+		if (n === 3) {
+			return [this.corners[this.cornerHash["whitebluered"]], this.edges[this.edgeHash["bluered"]]]
+		}
+		if (n === 4) {
+			return [this.corners[this.cornerHash["whiteorangeblue"]], this.edges[this.edgeHash["blueorange"]]]
+		}
+		
+		return [];
+	}
+	//isPairSolved
+	isPairSolved(n) {
+		if (n === 1) {
+			if (this.edges[this.edgeHash["greenorange"]].isSolved() && this.corners[this.cornerHash["whitegreenorange"]].isSolved()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (n === 2) {
+			if (this.edges[this.edgeHash["greenred"]].isSolved() && this.corners[this.cornerHash["whiteredgreen"]].isSolved()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (n === 3) {
+			if (this.edges[this.edgeHash["bluered"]].isSolved() && this.corners[this.cornerHash["whitebluered"]].isSolved()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (n === 4) {
+			if (this.edges[this.edgeHash["blueorange"]].isSolved() && this.corners[this.cornerHash["whiteorangeblue"]].isSolved()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	isCrossPieceOnTop() {
+		if (this.edges[this.edgeHash["whitegreen"]].isOnTop() === false && this.edges[this.edgeHash["whiteblue"]].isOnTop() === false && this.edges[this.edgeHash["whitered"]].isOnTop() === false && this.edges[this.edgeHash["whiteorange"]].isOnTop() === false) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	isPairOnTop(n) {
+		if (n === 1) {
+			if (this.edges[this.edgeHash["greenorange"]].isOnTop() && this.corners[this.cornerHash["whitegreenorange"]].isOnTop()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (n === 2) {
+			if (this.edges[this.edgeHash["greenred"]].isOnTop() && this.corners[this.cornerHash["whiteredgreen"]].isOnTop()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (n === 3) {
+			if (this.edges[this.edgeHash["bluered"]].isOnTop() && this.corners[this.cornerHash["whitebluered"]].isOnTop()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if (n === 4) {
+			if (this.edges[this.edgeHash["blueorange"]].isOnTop() && this.corners[this.cornerHash["whiteorangeblue"]].isOnTop()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	drawScramble() {
+		for (var i = 0; i < this.corners.length; i++) {
+			var colors = [this.corners[i].first, this.corners[i].second, this.corners[i].third];
+			var or = [this.corners[i].oOne, this.corners[i].oTwo, this.corners[i].oThree];
+			for (var j = 0; j < 3; j++) {
+				if (or[j] === "x")
+					document.getElementById(2*this.corners[i].x+","+this.corners[i].y+","+this.corners[i].z).style.backgroundColor = colors[j]
+				if (or[j] === "y")
+					document.getElementById(this.corners[i].x+","+2*this.corners[i].y+","+this.corners[i].z).style.backgroundColor = colors[j]
+				if (or[j] === "z")
+					document.getElementById(this.corners[i].x+","+this.corners[i].y+","+2*this.corners[i].z).style.backgroundColor = colors[j] 
+			}
+		}
+		
+		for (var i = 0; i < this.edges.length; i++) {
+			var colors = [this.edges[i].first, this.edges[i].second];
+			var or = [this.edges[i].oOne, this.edges[i].oTwo];
+			for (var j = 0; j < 2; j++) {
+				if (or[j] === "x")
+					document.getElementById((2*this.edges[i].x)+","+this.edges[i].y+","+this.edges[i].z).style.backgroundColor = colors[j]
+				if (or[j] === "y")
+					document.getElementById(this.edges[i].x+","+(2*this.edges[i].y)+","+this.edges[i].z).style.backgroundColor = colors[j]
+				if (or[j] === "z")
+					document.getElementById(this.edges[i].x+","+this.edges[i].y+","+(2*this.edges[i].z)).style.backgroundColor = colors[j] 
+			}
+		}
+	}
+	
+	
+	turnX(s, p) { //either 1 or -1 
+		for (var i = 0; i < this.edges.length; i++) {
+			if (this.edges[i].x === s) {
+				var tempZ = p * this.edges[i].y //x = y
+				var tempY = 0;
+				//if (this.edges[i].z !== 0) {	// prevents issue where 0 * -1 = -0
+					tempY = -1 * p * this.edges[i].z			//x = -y
+				//}
+				if (tempZ === -0)
+					tempZ = 0
+				if (tempY === -0)	
+					tempY = 0
+				this.edges[i].z = tempZ;
+				this.edges[i].y = tempY;
+				
+				if (this.edges[i].oOne === "y") {
+					this.edges[i].oOne = "z"
+				} else if (this.edges[i].oOne === "z") {
+					this.edges[i].oOne = "y"
+				}
+				if (this.edges[i].oTwo === "y") {
+					this.edges[i].oTwo = "z"
+				} else if (this.edges[i].oTwo === "z") {
+					this.edges[i].oTwo = "y"
+				}
+				
+			}
+		}
+		for (var i = 0; i < this.corners.length; i++) {
+			if (this.corners[i].x === s) {
+				var tempY = p * this.corners[i].y * -1 * (this.corners[i].y * this.corners[i].z)
+				var tempZ = p * this.corners[i].z * (this.corners[i].y * this.corners[i].z)
+				this.corners[i].y = tempY;
+				this.corners[i].z = tempZ;
+			
+				if (this.corners[i].oOne === "x") {
+					var temp = this.corners[i].oTwo;
+					this.corners[i].oTwo = this.corners[i].oThree
+					this.corners[i].oThree = temp;
+				}
+				if (this.corners[i].oTwo === "x") {
+					var temp = this.corners[i].oOne;
+					this.corners[i].oOne = this.corners[i].oThree
+					this.corners[i].oThree = temp;
+				}
+				if (this.corners[i].oThree === "x") {
+					var temp = this.corners[i].oTwo;
+					this.corners[i].oTwo = this.corners[i].oOne
+					this.corners[i].oOne = temp;
+				}
+			}
+		}
+	}
+	turnY(s, p) { //either 1 or -1, change x to y and y to x
+		for (var i = 0; i < this.edges.length; i++) {
+			if (this.edges[i].y === s) {
+				var tempZ = p * this.edges[i].x //x = y
+				var tempX = 0;
+				//if (this.edges[i].z !== 0) {	// prevents issue where 0 * -1 = -0
+					tempX = -1 * p * this.edges[i].z			//x = -y
+				//}	
+				if (tempX === -0)
+					tempX = 0
+				if (tempZ === -0)	
+					tempZ = 0
+				this.edges[i].z = tempZ;
+				this.edges[i].x = tempX;
+				
+				if (this.edges[i].oOne === "x") {
+					this.edges[i].oOne = "z"
+				} else if (this.edges[i].oOne === "z") {
+					this.edges[i].oOne = "x"
+				}
+				if (this.edges[i].oTwo === "x") {
+					this.edges[i].oTwo = "z"
+				} else if (this.edges[i].oTwo === "z") {
+					this.edges[i].oTwo = "x"
+				}
+				
+			}
+		}
+		for (var i = 0; i < this.corners.length; i++) {
+			if (this.corners[i].y === s) {
+				var tempX = p * this.corners[i].x * -1 * (this.corners[i].x * this.corners[i].z)
+				var tempZ = p * this.corners[i].z * (this.corners[i].x * this.corners[i].z)
+				this.corners[i].x = tempX;
+				this.corners[i].z = tempZ;
+			
+				if (this.corners[i].oOne === "y") {
+					var temp = this.corners[i].oTwo;
+					this.corners[i].oTwo = this.corners[i].oThree
+					this.corners[i].oThree = temp;
+				}
+				if (this.corners[i].oTwo === "y") {
+					var temp = this.corners[i].oOne;
+					this.corners[i].oOne = this.corners[i].oThree
+					this.corners[i].oThree = temp;
+				}
+				if (this.corners[i].oThree === "y") {
+					var temp = this.corners[i].oTwo;
+					this.corners[i].oTwo = this.corners[i].oOne
+					this.corners[i].oOne = temp;
+				}
+			}
+		}
+	}
+	turnZ(s, p) { //either 1 or -1 change z to x and x to z
+		for (var i = 0; i < this.edges.length; i++) {
+			if (this.edges[i].z === s) {
+				var tempX = p * this.edges[i].y //x = y
+				var tempY = 0;
+				//if (this.edges[i].x !== 0) {	// prevents issue where 0 * -1 = -0
+					tempY = p * -1 * this.edges[i].x			//x = -y
+				//}	
+				if (tempX === -0)
+					tempX = 0
+				if (tempY === -0)	
+					tempY = 0
+				this.edges[i].x = tempX;
+				this.edges[i].y = tempY;
+				
+				if (this.edges[i].oOne === "y") {
+					this.edges[i].oOne = "x"
+				} else if (this.edges[i].oOne === "x") {
+					this.edges[i].oOne = "y"
+				}
+				if (this.edges[i].oTwo === "y") {
+					this.edges[i].oTwo = "x"
+				} else if (this.edges[i].oTwo === "x") {
+					this.edges[i].oTwo = "y"
+				}
+				
+			}
+		}
+		for (var i = 0; i < this.corners.length; i++) {
+			if (this.corners[i].z === s) {
+				var tempY = p * this.corners[i].y * -1 * (this.corners[i].y * this.corners[i].x)
+				var tempX = p * this.corners[i].x * (this.corners[i].y * this.corners[i].x)
+				this.corners[i].y = tempY;
+				this.corners[i].x = tempX;
+			
+				if (this.corners[i].oOne === "z") {
+					var temp = this.corners[i].oTwo;
+					this.corners[i].oTwo = this.corners[i].oThree
+					this.corners[i].oThree = temp;
+				}
+				if (this.corners[i].oTwo === "z") {
+					var temp = this.corners[i].oOne;
+					this.corners[i].oOne = this.corners[i].oThree
+					this.corners[i].oThree = temp;
+				}
+				if (this.corners[i].oThree === "z") {
+					var temp = this.corners[i].oTwo;
+					this.corners[i].oTwo = this.corners[i].oOne
+					this.corners[i].oOne = temp;
+				}
+			}
+		}
+	}
+	
+	alg(s) {
+	var moves = s.split(" ");
+	var done = ""
+	for (var i = 0; i < moves.length; i++) {
+		if (moves[i] === "R") {
+			this.turnX(1, -1)
+			done = done + "R"
+		}
+		if (moves[i] === "R'") {
+			this.turnX(1, 1)
+			done = done + "R'"
+		}
+		if (moves[i] === "U") {
+			this.turnY(1, 1)
+			done = done + "U"
+		}
+		if (moves[i] === "U'") {
+			this.turnY(1, -1)
+			done = done + "U'"
+		}
+		if (moves[i] === "F") {
+			this.turnZ(1, 1)
+			done = done + "F"
+		}
+		if (moves[i] === "F'") {
+			this.turnZ(1, -1)
+			done = done + "F'"
+		}
+		if (moves[i] === "D'") {
+			this.turnY(-1, 1)
+			done = done + "D'"
+		}
+		if (moves[i] === "D") {
+			this.turnY(-1, -1)
+			done = done + "D"
+		}
+		if (moves[i] === "B'") {
+			this.turnZ(-1, 1)
+			done = done + "B'"
+		}
+		if (moves[i] === "B") {
+			this.turnZ(-1, -1)
+			done = done + "B"
+		}
+		if (moves[i] === "L'") {
+			this.turnX(-1, -1)
+			done = done + "L'"
+		}
+		if (moves[i] === "L") {
+			this.turnX(-1, 1)
+			done = done + "L"
+		}
+		//_2 faces
+		if (moves[i] === "L2") {
+			this.turnX(-1, 1)
+			this.turnX(-1, 1)
+			done = done + "L2"
+		}
+		if (moves[i] === "B2") {
+			this.turnZ(-1, 1)
+			this.turnZ(-1, 1)
+			done = done + "B2"
+		}
+		if (moves[i] === "D2") {
+			this.turnY(-1, 1)
+			this.turnY(-1, 1)
+			done = done + "D2"
+		}
+		if (moves[i] === "U2") {
+			this.turnY(1, 1)
+			this.turnY(1, 1);
+			done = done + "U2"
+		}
+		if (moves[i] === "R2") {
+			this.turnX(1, 1)
+			this.turnX(1, 1);
+			done = done + "R2"
+		}
+		if (moves[i] === "F2") {
+			this.turnZ(1, 1)
+			this.turnZ(1, 1);
+			done = done + "F2"
+		}
+	} 
+	//this.drawScramble()
+	//console.log("executed algorithm: " + done)
+}
+
+}
+	//String manipulation stuff: 
+		function invertScramble(initial) {
+		if (typeof initial === "string") {
+			initial = initial.split(" ");
+		}
+		initial = initial.reverse();
+		var inverted = "";
+		for (var i = 0; i < initial.length; i++) {
+			if (initial[i].length === 2 && initial[i].charAt(1) === "'") {
+				initial[i] = initial[i].charAt(0);
+				inverted = inverted + initial[i];
+			}
+			else if (initial[i].length === 1) {
+				initial[i] = initial[i] + "'";
+				inverted = inverted + initial[i];
+			} else {
+				initial[i] = initial[i];
+				inverted = inverted + initial[i];
+			}
+			if (i != initial.length - 1) {
+				inverted += " ";
+			}
+		}
+		return inverted;
+	}
+		function arrayToString(initial) {
+		var toRet = "";
+		for (var i = 0; i < initial.length; i++) {
+			toRet = toRet + initial[i];
+			if (i < initial.length - 1) {
+				toRet = toRet + " ";
+			}
+		}
+		return toRet;
+	}
+	
+		function generateRandomScramble() {
+		var possibilities = ["R", "R'", "U", "U'", "L", "L'", "D", "D'", "B", "B'", "F", "F'", "D2", "F2", "B2", "U2", "R2", "L2"];
+		var scramble = "";
+		var i = 0;
+		var prev = 0;
+		for (i = 0; i < 20; i++) {
+			var index = Math.floor(Math.random() * (possibilities.length - 1) );
+			if (possibilities[index].charAt(0) !== possibilities[prev].charAt(0)) {
+				scramble = scramble + possibilities[index] + " ";
+			} else {
+				i--;
+			}
+			prev = index;
+		}
+		return scramble;
+	}
+	
+	
+	//cube solve stuff:
+	var main = new cube(edgesStart, cornersStart);
+		const hash = {};
+		hash[0] = "0"; 
+		hash[1] = "R";
+		hash[2] = "R'";
+		hash[3] = "L"; 
+		hash[4] = "L'";
+		hash[5] = "D";
+		hash[6] = "D'"; 
+		hash[7] = "B";
+		hash[8] = "B'";
+		hash[9] = "F"; 
+		hash[10] = "F'";
+		hash[11] = "D2";
+		hash[12] = "U2";
+		hash[13] = "F2";
+		hash[14] = "B2";
+		hash[15] = "R2";
+		hash[16] = "L2";
+	var recursiveCount = 0;
+	var crossSolutions = [];
+	var smallestCrossNum = 0; var smallestCrossSolve = "";
+	function solveCross(c, num, algo, last) { //to start, make last a space or some char NOT USED in notation
+	recursiveCount++;
+		if (num <= 0) {
+			return //[false, ""];
+		}
+		c.alg(algo)
+		//console.log("c.isCrossSolved(): " + c.isCrossSolved());
+		var solved = c.isCrossSolved();
+		if (solved === 4) {
+			crossSolutions.push(algo)
+			if (num > smallestCrossNum) {
+				smallestCrossSolve = algo;
+				smallestCrossNum = num;
+			}
+			//console.log("found solution")
+			c.alg(invertScramble(algo))
+			recursiveCount = 0;
+			return;
+		}
+		c.alg(invertScramble(algo)) //
+		if (recursiveCount % 1000 === 0) {
+			console.log(recursiveCount + ": " + algo + " " + num)
+		}
+		if ( (solved >= 2 || num > 4)) {
+			var flag = [false, ""];
+			for (var i = 1; i < 17; i++) {
+				if (hash[i].charAt(0) !== last.charAt(0)) {
+					solveCross(c, num - 1, algo + " " + hash[i], hash[i])
+				}
+			}
+			//return flag;
+		}
+		//return [false, ""]
+		recursiveCount = 0;
+	}
+	
+	var f2lSolutions = [[], [], [], []]
+	var f2lShortSolutions = [0, 0, 0, 0];
+	//will assume cross is already solved, pair by pair
+	// 'pair' indicates a color pair (red-green, etc) with int 1-4. isPaired isTop boolean, both pieces should reach top after move ~4
+	//num should be set to 11, max num of moves to solve any pair...
+	function solveF2L(pair, c, num, algo, last, isTop, first, second, third, fourth) {
+		recursiveCount++;
+		if (num <= 0) {
+			return;
+		}
+		c.alg(algo)
+		var crossState = c.isCrossSolved() //set crossState
+		var crossOnTop = c.isCrossPieceOnTop() //set crossOnTop
+		var isSolved = c.isPairSolved(pair);
+		if (isSolved === true && !crossOnTop && crossState === 4) {
+			if ((c.isPairSolved(1) || first === false) && (c.isPairSolved(2) || second === false) && (c.isPairSolved(3) || third === false) && (c.isPairSolved(4) || fourth === false)) {
+				f2lSolutions[pair - 1].push(algo);
+			} 
+		}
+		if (isTop === false && c.isPairOnTop(pair)) { //set isTop
+			isTop = true;
+		}
+
+		c.alg(invertScramble(algo))
+		
+		if (recursiveCount % 1000 === 0) {
+			//console.log(recursiveCount + ": " + algo + " " + num)
+		}
+		
+		if (crossState > 2 && !(crossOnTop) && !(num <= 7 && isTop === false) ) { //heuristic
+			for (var i = 1; i < 17; i++) { //loops through turns to add to algo
+				if (hash[i].charAt(0) !== last.charAt(0)) { //take out repetitive turns
+					solveF2L(pair, c, num - 1, algo + " " + hash[i], hash[i], isTop, first, second, third, fourth)
+				}
+			}
+		}
+	}
+	function findShortF2L(pair) {
+		var shortestIndex = 0;
+		var shortestLength = 1000000;
+		for (var i = 0; i < f2lSolutions[pair - 1].length; i++) {
+			var numSpaces = 0;
+			for (var j = 0; j < f2lSolutions[pair - 1][i].length; j++) {
+				if (f2lSolutions[pair - 1][i].charAt(j) === " ") {
+					numSpaces++;
+				}
+			}
+			if (numSpaces < shortestLength) {
+				shortestIndex = i;
+			}
+		}
+		f2lShortSolutions[pair - 1] = f2lSolutions[pair - 1][shortestIndex];
+	}
+	//last layer stuff
+	
+		function getOLLEdgeState() {
+		var state = [];
+		var pos = [];
+		var count = 0;
+		for (var i = 0; i < 12; i++) {
+			if (edges[i][4] === "yellow") {
+				if (edges[i][6] === "y") {
+					count++;
+					state.push(edges[i]);
+				}
+			}
+			if (edges[i][5] === "yellow") {
+				if (edges[i][7] === "y") {
+					count++;
+					state.push(edges[i]);
+					
+				}
+			}
+		}
+		if (state.length == 2) {
+			if (state[0][0] === state[1][0] || state[0][2] === state[1][2]) {
+				count = 6;
+			}
+		}
+		return count;
+	}
+	function OLLEdges() {
+		var solution = "";
+		var yellowEdges = [];
+		for (var i = 0; i < 12; i++) {//defines yellowEdges to hold all of the oriented yellow edges
+			if (edges[i][4] === "yellow") {
+				if (edges[i][6] === "y") {
+					yellowEdges.push(edges[i]);
+				}
+			}
+			if (edges[i][5] === "yellow") {
+				if (edges[i][7] === "y") {
+					yellowEdges.push(edges[i]);
+					
+				}
+			}
+		}
+		var state = getOLLEdgeState();
+		
+		//case 6: setup 
+		if (state === 6) {
+			console.log("inside case 6")
+			if (yellowEdges[0][0] === 0) {
+				alg("D");
+				solution += "D ";
+			}
+			alg(rotate("F R U R' U' F'"));
+			solution += rotate("F R U R' U' F'");
+			return solution;
+		}
+		console.log("case: " + getOLLEdgeState());
+		
+		var c = 0;
+		//goal for case 2: one edge piece 0,1,-1 and other at  -1,1,0
+		if (state === 2) {
+			//while ( !((yellowEdges[0][0] === 0 && yellowEdges[0][2] === 1) && (yellowEdges[1][0] === -1 && yellowEdges[1][2] === 0)) || ((yellowEdges[1][0] === 0 && yellowEdges[1][2] === 1) && (yellowEdges[0][0] === -1 && yellowEdges[0][2] === 0)) && c < 12) {
+			while ( !((yellowEdges[0][0] === 0 && yellowEdges[0][2] === 1) && (yellowEdges[1][0] === -1 && yellowEdges[1][2] === 0) || (((yellowEdges[1][0] === 0 && yellowEdges[1][2] === 1) && (yellowEdges[0][0] === -1 && yellowEdges[0][2] === 0)))) ) {
+				console.log(yellowEdges)
+				console.log("inside loop")
+				console.log("couter: " + c)
+				c++;
+				if (c > 12) {
+					break
+				}
+				alg("D");
+				solution += "D ";
+				yellowEdges = [];
+				for (var i = 0; i < 12; i++) {//defines yellowEdges to hold all of the yellow edges
+			if (edges[i][4] === "yellow") {
+				if (edges[i][6] === "y") {
+					yellowEdges.push(edges[i]);
+				}
+			}
+			if (edges[i][5] === "yellow") {
+				if (edges[i][7] === "y") {
+					yellowEdges.push(edges[i]);
+					
+				}
+			}
+		}
+		c++;
+		var j;
+		drawScramble();
+		//for (j = 0; j < 5000; j++) {
+		//	console.log("stall");
+		//}
+			}
+			console.log("setup: " + solution);
+			alg(rotate("U U F U R U' R' F'"))
+			solution += rotate("U U F U R U' R' F'");
+			return solution;
+		}
+		//goal for case 4: do nothing
+		//case 0: no setup, just do alg
+		if (state === 0)  {
+			alg(rotate("F R U R' U' F' U2 F U R U' R' F'"));
+			solution += rotate("F R U R' U' F' U2 F U R U' R' F'");
+			return rotate("F R U R' U' F' U2 F U R U' R' F'");
+		}
+		return "";
+	}
+	function getOLLCornerState() {
+		var i;
+		var state = 0;
+		var corners = [];
+		for (i = 0; i < 8; i++) {
+			if (pieces[i][4] === "yellow") {
+				if (pieces[i][7] === "y") {
+					state++
+					corners.push(pieces[i]);
+				}
+			}
+			if (pieces[i][5] === "yellow") {
+				if (pieces[i][8] === "y") {
+					state++
+					corners.push(pieces[i]);
+				}
+			}
+			if (pieces[i][6] === "yellow") {
+				if (pieces[i][9] === "y") {
+					state++
+					corners.push(pieces[i]);
+				}
+			}
+		}
+		if (state === 2) { //denote L case
+			if ((corners[0][0] !== corners[1][0]) && (corners[0][2] !== corners[1][2])) {
+				state = 5;
+			}
+		}
+		return [state, corners];
+	}
+	function OLLCorners() {
+		var solution = "";
+		var cornerStuff = getOLLCornerState();
+		var state = cornerStuff[0];
+		var corners = cornerStuff[1];
+		var count = 0;
+		if (state === 0) { // H, PI
+			console.log("state 0")
+			while(!((document.getElementById(2+","+ -1 + "," + -1).style.backgroundColor !== "yellow" && document.getElementById(2+","+ -1 + "," +1).style.backgroundColor !== "yellow")) && count < 10) {
+				alg("D ")
+				solution += "D "
+				drawScramble();
+				count++
+			}
+			//alg(rotate("U2"))
+			if (document.getElementById(-1+","+ -1 + "," + 2).style.backgroundColor != "yellow") {
+				//PI
+				console.log("DOING PI")
+				alg(rotate("U U R U2 R2 U' R2 U' R2 U2 R"));
+				solution += rotate("U U R U2 R2 U' R2 U' R2 U2 R");
+				return solution;
+			} else {
+				//H
+				console.log("DOING H")
+				alg(rotate("U R U R' U R U' R' U R U2 R'"));
+				solution += rotate("U R U R' U R U' R' U R U2 R'");
+				return solution;	
+			}
+		}
+		if (state === 1) { //Sune, anti
+		console.log("state 1")
+			while(document.getElementById(-1+","+ -2 + "," +1).style.backgroundColor !== "yellow" && count < 10) {
+				alg("D ")
+				solution += "D "
+				drawScramble();
+				count++
+			}
+			
+			if (document.getElementById(-2+","+ -1 + "," + -1).style.backgroundColor === "yellow") {
+				//sune
+				alg(rotate("R' U2 R U R' U R"));
+				solution += rotate("R' U2 R U R' U R");
+				return solution;
+			} else {
+				//antisune
+				alg(rotate("U' R U2 R' U' R U' R'"));
+				solution += rotate("U' R U2 R' U' R U' R'");
+				return solution;	
+			}
+		}
+		if (state === 2) { //U, T
+			console.log("state 2")
+			while(!((document.getElementById(-1+","+ -2 + "," + 1).style.backgroundColor !== "yellow" && document.getElementById(-1+","+ -2 + "," + -1).style.backgroundColor !== "yellow")) && count < 10) {
+				alg("D ")
+				solution += "D "
+				drawScramble();
+				count++
+			}
+			
+			if (document.getElementById(-1+","+ -1 + "," + 2).style.backgroundColor === "yellow") {
+				//T
+				alg(rotate("U U L F R' F' L' F R F'"));
+				solution += rotate("U U L F R' F' L' F' R F'");
+				return solution;
+			} else {
+				//U
+				alg(rotate("U' R2 D' R U2 R' D R U2 R"));
+				solution += rotate("U' R2 D' R U2 R' D R U2 R");
+				return solution;	
+			}
+		}
+		if (state === 5) { //L
+		console.log("state 5")
+			while((document.getElementById(-1+","+ -1 + "," + 2).style.backgroundColor !== "yellow") && count < 10) {
+				alg("D ")
+				solution += "D "
+				drawScramble();
+				count++
+			}
+			//L algorithm
+			alg(rotate("F' L F R' F' L' F R"));
+			solution += rotate("F' L F R' F' L' F R");
+			return solution;
+			
+		}
+		return solution;
+	}
+	function PLLCorners() {
+		var count = 0;
+		var solution = "";
+		while ((document.getElementById(2+","+ -1 + "," + -1).style.backgroundColor !== document.getElementById(2+","+ -1 + "," + 1).style.backgroundColor) && count < 12) {
+			console.log("in loop")
+			count++;
+			alg("D");
+			solution += "D ";
+			drawScramble();
+		}
+			if ((document.getElementById(2+","+ -1 + "," + -1).style.backgroundColor === document.getElementById(2+","+ -1 + "," + 1).style.backgroundColor)) {
+				if ((document.getElementById(-1+","+ -1 + "," + -2).style.backgroundColor === document.getElementById(1+","+ -1 + "," + -2).style.backgroundColor)) {
+					console.log("skip")
+					//corner PLL skip
+					return "";
+				}
+				//T-perm
+				console.log("tperm")
+				alg(rotate("R U R' U' R' F R2 U' R' U' R U R' F'"));
+				solution += rotate("R U R' U' R' F R2 U' R' U' R U R' F'");
+				return solution;
+			} 
+		//if gets past while loop, y-perm
+		console.log("yperm")
+		alg(rotate("F R U' R' U' R U R' F' R U R' U' R' F R F'"));
+		solution = rotate("F R U' R' U' R U R' F' R U R' U' R' F R F'");
+		return solution;
+		
+	}
+	function PLLEdges() {
+	var solution = "";
+	var count = 0;
+	var UFound = false;
+	//while loop to find U perm in back (remember to check skip)
+	while((document.getElementById(0+","+ -1 + "," + -2).style.backgroundColor !== document.getElementById(1+","+ -1 + "," + -2).style.backgroundColor) && count < 12) {
+			alg("D ")
+			solution += "D "
+			drawScramble();
+			count++
+	}
+			if ((document.getElementById(0+","+ -1 + "," + -2).style.backgroundColor === document.getElementById(1+","+ -1 + "," + -2).style.backgroundColor)) {
+				//Edge skip
+				if ((document.getElementById(2+","+ -1 + "," + -1).style.backgroundColor !== document.getElementById(2+","+ -1 + "," + 0).style.backgroundColor)) {
+				//U Perm
+				//alg(rotate("R U' R U R U R U' R' U' R2"));
+				//solution += rotate("R U' R U R U R U' R' U' R2");
+				//solution += " ";
+					count = 0;
+					while ((document.getElementById(2+","+ -1 + "," + -1).style.backgroundColor !== document.getElementById(2+","+ -1 + "," + 0).style.backgroundColor)) {
+					//do Uperm again if first isn't enough
+						alg(rotate("R U' R U R U R U' R' U' R2"));
+						solution += rotate("R U' R U R U R U' R' U' R2");
+						solution += " ";
+						drawScramble();
+						count++;
+						if (count > 12) {
+							break;
+						}
+					}
+				return solution;
+			  }
+				return "";
+			} 
+			
+			
+				
+	
+	//if not U perm or skip, check H, else Z
+	var col = [document.getElementById(2+","+ -1 + "," + -1).style.backgroundColor, document.getElementById(2+","+ -1 + "," + 0).style.backgroundColor]
+		if ((col[1] === "green" && col[0] === "blue") || (col[1] === "blue" && col[0] === "green") || (col[1] === "red" && col[0] === "orange") || (col[1] === "orange" && col[0] === "red")) {
+			//hperm alg
+			alg(rotate("R2 U2 R2 U2 R2 U R2 U2 R2 U2 R2 U'"));
+			solution += rotate("R2 U2 R2 U2 R2 U R2 U2 R2 U2 R2 U'");
+			return solution;
+		} else {
+			//zperm, check for setup D, then do alg
+			if ((document.getElementById(1+","+ -1 + "," + 2).style.backgroundColor === document.getElementById(2+","+ -1 + "," + 0).style.backgroundColor)) {
+				alg("D");
+				solution += "D ";
+			}
+			alg(rotate("R' U' R2 U R U R' U' R U R U' R U' R' U2"));
+			solution += rotate("R' U' R2 U R U R' U' R U R U' R U' R' U2");
+			return solution;
+		}
+		//for Z, check side edge to a front corner sticker, they should be the same if not do D to set up
+	}
+	function doAUF() {
+		var count = 0;
+		var solution = "";
+		drawScramble();
+		while ( (document.getElementById(2+","+ -1 + "," + -1).style.backgroundColor !== document.getElementById(2+","+ 0 + "," + -1).style.backgroundColor) && count < 12) {
+			alg("D");
+			solution += "D ";
+			count++;
+			drawScramble();
+		}
+		return solution;
+	}	
+	
+	//end of last layer stuff
+	function setup() {
+		main.alg(generateRandomScramble())
+		solveCross(main, 9, " ", "k");
+		main.alg(crossSolutions[1])
+		main.drawScramble();
+	}
+	//delete singleTest later
+	function singleTest() {
+		var solution = "";
+		var r = generateRandomScramble()
+		console.log("random scramble: " + r)
+		main.alg(r)
+		solveCross(main, 9, " ", "k");
+		main.alg(smallestCrossSolve);
+		solution += smallestCrossSolve;
+		main.drawScramble();
+		
+		solution += " "
+		
+		solveF2L(1, main, 11, " ", "k", false, false, false, false, false);
+		findShortF2L(1);
+		main.alg(f2lShortSolutions[0]);
+		solution += f2lShortSolutions[0];
+		main.drawScramble();
+		
+		solution += " "
+		
+		solveF2L(2, main, 11, " ", "k", false, true, false, false, false);
+		findShortF2L(2);
+		main.alg(f2lShortSolutions[1]);
+		solution += f2lShortSolutions[1];
+		main.drawScramble();
+		
+		solution += " "
+		
+		solveF2L(3, main, 11, " ", "k", false, true, true, false, false);
+		findShortF2L(3);
+		main.alg(f2lShortSolutions[2]);
+		solution += f2lShortSolutions[2];
+		main.drawScramble();
+		
+		solution += " "
+		
+		solveF2L(4, main, 11, " ", "k", false, true, true, true, false);
+		findShortF2L(4);
+		main.alg(f2lShortSolutions[3]);
+		solution += f2lShortSolutions[3];
+		main.drawScramble();
+		
+		solution += " "
+		console.log("solution: " + solution)
+	}
+</script>
+</body>
+</html>
