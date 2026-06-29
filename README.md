@@ -3,9 +3,9 @@ Given any valid Rubik's Cube scramble, the solving algorithm will find a solutio
 Uses Rubik's Cube Notation (eg. R U R' U') to communicate move sequence of solution.
 
 How it works:
-Cube Solver decomposes the search space into CFOP steps, it uses a BFS to first solve the white cross, (using # of placed pieces as search heuristic)
-Then dynamically solves F2L pairs, by searching BFS, pruning as pairs form, and restarting the search after each new pair is slotted (this is necessarty to stop exponential search space explosion)
-OLL and PLL (last 2 CFOP steps) are hardcoded (2 look OLL and PLL), BFS'ing for Last Layer algs is unnecessary. 
+Cross — BFS with number of correctly placed edge pieces as the search heuristic
+F2L — Dynamic BFS that prunes the search as pairs form, restarting after each pair is slotted to prevent exponential state space explosion
+OLL / PLL — Hardcoded 2-look OLL and PLL pattern matching; BFS over the last layer is unnecessary given the finite algorithm set
 
 Why it's hard:
 The Rubik's cube has 43 quintillion possible states. I avoid an exhaustive search of these states by using effective heuristics,
